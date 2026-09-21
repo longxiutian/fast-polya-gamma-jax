@@ -1,5 +1,8 @@
 # fast-polya-gamma-jax
 
+[![CI](https://github.com/longxiutian/fast-polya-gamma-jax/actions/workflows/ci.yml/badge.svg)](https://github.com/longxiutian/fast-polya-gamma-jax/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Fast, fixed-cost approximations to `PG(1, eta)` implemented in pure JAX.
 
 This project targets the common Bernoulli-logit Pólya-Gamma update
