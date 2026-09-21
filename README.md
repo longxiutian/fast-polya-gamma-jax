@@ -159,6 +159,64 @@ python benchmarks/benchmark_pg.py --size 60000 --repeats 30
 The checked-in CPU receipt is
 [`benchmarks/baselines/windows_cpu_jax_0_11_2.json`](benchmarks/baselines/windows_cpu_jax_0_11_2.json).
 
+## 20,000-person block Gibbs benchmark
+
+The repository also includes a synthetic hierarchical Bernoulli-logit workload
+that exercises the sampler inside a complete systematic-scan Gibbs transition:
+
+```text
+logit p_nt = a_n + z_nt' b_n + u_campaign(nt) + v_item(nt) + d_nt' delta,
+b_n | h_n ~ Normal(C' h_n, Sigma_b).
+```
+
+Each sweep updates all observation-level PG variables, 20,000 independent
+four-dimensional person blocks (`a_n` plus three creative coefficients), 88
+campaign effects, 340 item effects, 22 global controls, a 73-feature hierarchy,
+and its conjugate variance components. Person sufficient statistics use a
+sorted segment reduction, the Gaussian draws use batched Cholesky solves, and
+`jax.lax.scan` keeps the large state on device while retaining only compact
+diagnostics.
+
+The default synthetic panel has approximately two observations per person. On
+the same Windows CPU used above, 100 warmup and 1,000 measured float64 sweeps
+gave:
+
+| PG approximation | Sweeps/second | PG updates/second | Person blocks/second | Boundary RSS peak |
+| --- | ---: | ---: | ---: | ---: |
+| `K=8` + tail mean | 51.47 | 2.05 million | 1.03 million | 425 MiB |
+| `K=16` + tail mean | 43.79 | 1.74 million | 0.88 million | 431 MiB |
+
+Both runs completed with finite states, positive PG draws and scale parameters,
+and positive person-block Cholesky diagonals. Computational stability does not
+imply efficient posterior exploration: out of 1,000 measured sweeps, ESS was
+only about 4 for the population intercept, 7--9 for the three population
+creative means, and 5--6 for the respondent-intercept scale. The near-identical
+pattern under `K=8` and `K=16` points to centered hierarchical dependence, not
+PG truncation, as the immediate mixing problem. The receipts report all scalar
+ESS values for transparency; neither run establishes posterior convergence or
+inferential adequacy.
+
+Reproduce the `K=8` run with:
+
+```bash
+python -m pip install -e ".[benchmark]"
+python benchmarks/benchmark_block_gibbs.py \
+  --people 20000 \
+  --warmup-sweeps 100 \
+  --sample-sweeps 1000 \
+  --chunk-size 10 \
+  --num-terms 8
+```
+
+Machine-readable receipts:
+
+- [`K=8` CPU receipt](benchmarks/baselines/block_gibbs_20k_windows_cpu_k8.json)
+- [`K=16` CPU receipt](benchmarks/baselines/block_gibbs_20k_windows_cpu_k16.json)
+
+This workload is a conjugate structural analog for scalability testing. It is
+not a reproduction of an applied teacher model, does not use private data, and
+does not support substantive parameter interpretation.
+
 ## NumPyro integration
 
 The numerical sampler is pure JAX. NumPyro integration is an adapter rather
@@ -206,6 +264,11 @@ trace.
 - CPU performance does not establish GPU performance.
 - Approximation quality for an MCMC application must be assessed at the
   posterior logits actually visited by that chain.
+- The included block Gibbs benchmark uses synthetic data and conjugate priors;
+  it is a computational harness rather than a scientific model comparison.
+- The centered hierarchy in that harness mixes slowly for population-level
+  respondent hyperparameters and needs reblocking, collapsing, or interweaving
+  before production MCMC use.
 
 ## Development
 

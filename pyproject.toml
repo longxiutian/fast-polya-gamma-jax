@@ -48,6 +48,10 @@ test = [
 reference = [
   "polyagamma>=2",
 ]
+benchmark = [
+  "numpy>=1.26",
+  "psutil>=5.9",
+]
 
 [tool.setuptools.packages.find]
 where = ["src"]
