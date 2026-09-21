@@ -1,0 +1,717 @@
+{
+  "backend": "cpu",
+  "configurations": [
+    {
+      "approximate_mean_relative_error": 0.001155050007794145,
+      "approximate_sample_mean": 0.25028876250194854,
+      "approximate_sample_variance": 0.041861567553977186,
+      "approximate_variance_relative_error": 0.0046776212954525165,
+      "eta": 0.0,
+      "exact_sample_mean": 0.2497571284970357,
+      "exact_sample_variance": 0.04174506455856997,
+      "ks_statistic": 0.0042200000000000015,
+      "num_terms": 8,
+      "quantiles": [
+        {
+          "approximate": 0.020363514706384506,
+          "exact": 0.020832047253177072,
+          "probability": 0.001,
+          "relative_error": -0.022490950653979117
+        },
+        {
+          "approximate": 0.03170268520606508,
+          "exact": 0.031810441982539094,
+          "probability": 0.01,
+          "relative_error": -0.0033874655540202434
+        },
+        {
+          "approximate": 0.05004201082503498,
+          "exact": 0.04996367957170929,
+          "probability": 0.05,
+          "relative_error": 0.0015677639036426742
+        },
+        {
+          "approximate": 0.18980195803071945,
+          "exact": 0.18915524301860498,
+          "probability": 0.5,
+          "relative_error": 0.0034189642422486725
+        },
+        {
+          "approximate": 0.656577287812684,
+          "exact": 0.6578422242800133,
+          "probability": 0.95,
+          "relative_error": -0.0019228569110377677
+        },
+        {
+          "approximate": 0.9852363736297745,
+          "exact": 0.9828899686427611,
+          "probability": 0.99,
+          "relative_error": 0.002387250925201117
+        },
+        {
+          "approximate": 1.4579979400649452,
+          "exact": 1.437243327619292,
+          "probability": 0.999,
+          "relative_error": 0.014440569698126219
+        }
+      ],
+      "theoretical_mean": 0.25,
+      "theoretical_variance": 0.041666666666666664,
+      "wasserstein_distance": 0.0007744519007809855,
+      "wasserstein_over_mean": 0.003097807603123942
+    },
+    {
+      "approximate_mean_relative_error": -0.00014933518678650337,
+      "approximate_sample_mean": 0.24996266620330337,
+      "approximate_sample_variance": 0.041851955818612896,
+      "approximate_variance_relative_error": 0.004446939646709558,
+      "eta": 0.0,
+      "exact_sample_mean": 0.2497571284970357,
+      "exact_sample_variance": 0.04174506455856997,
+      "ks_statistic": 0.002255000000000007,
+      "num_terms": 16,
+      "quantiles": [
+        {
+          "approximate": 0.020610933672020708,
+          "exact": 0.020832047253177072,
+          "probability": 0.001,
+          "relative_error": -0.010614107123947829
+        },
+        {
+          "approximate": 0.03176498829311523,
+          "exact": 0.031810441982539094,
+          "probability": 0.01,
+          "relative_error": -0.0014288921055801685
+        },
+        {
+          "approximate": 0.04981834303900562,
+          "exact": 0.04996367957170929,
+          "probability": 0.05,
+          "relative_error": -0.002908843663026812
+        },
+        {
+          "approximate": 0.1889584935681358,
+          "exact": 0.18915524301860498,
+          "probability": 0.5,
+          "relative_error": -0.0010401480145587816
+        },
+        {
+          "approximate": 0.6583967317783085,
+          "exact": 0.6578422242800133,
+          "probability": 0.95,
+          "relative_error": 0.0008429186784142817
+        },
+        {
+          "approximate": 0.9879853051277302,
+          "exact": 0.9828899686427611,
+          "probability": 0.99,
+          "relative_error": 0.005184035494842872
+        },
+        {
+          "approximate": 1.43713119399719,
+          "exact": 1.437243327619292,
+          "probability": 0.999,
+          "relative_error": -7.801992880891118e-05
+        }
+      ],
+      "theoretical_mean": 0.25,
+      "theoretical_variance": 0.041666666666666664,
+      "wasserstein_distance": 0.0005073999000726044,
+      "wasserstein_over_mean": 0.0020295996002904176
+    },
+    {
+      "approximate_mean_relative_error": -0.00042919750797270793,
+      "approximate_sample_mean": 0.23095940886386118,
+      "approximate_sample_variance": 0.03412997567181839,
+      "approximate_variance_relative_error": -0.009193049515647778,
+      "eta": 1.0,
+      "exact_sample_mean": 0.23043671638387445,
+      "exact_sample_variance": 0.03418131209873445,
+      "ks_statistic": 0.003515000000000046,
+      "num_terms": 8,
+      "quantiles": [
+        {
+          "approximate": 0.020704327042919152,
+          "exact": 0.020033704182724658,
+          "probability": 0.001,
+          "relative_error": 0.03347473108706388
+        },
+        {
+          "approximate": 0.03126488671316047,
+          "exact": 0.03090319963954328,
+          "probability": 0.01,
+          "relative_error": 0.011703871373706518
+        },
+        {
+          "approximate": 0.04825817142449613,
+          "exact": 0.047962347894636395,
+          "probability": 0.05,
+          "relative_error": 0.006167828366317632
+        },
+        {
+          "approximate": 0.17676360758540813,
+          "exact": 0.17600605005818917,
+          "probability": 0.5,
+          "relative_error": 0.0043041561751343185
+        },
+        {
+          "approximate": 0.5987399421300819,
+          "exact": 0.5959355697220885,
+          "probability": 0.95,
+          "relative_error": 0.004705831553738545
+        },
+        {
+          "approximate": 0.8913918091992067,
+          "exact": 0.892630021643316,
+          "probability": 0.99,
+          "relative_error": -0.0013871507949393621
+        },
+        {
+          "approximate": 1.320398601004723,
+          "exact": 1.3194511720784308,
+          "probability": 0.999,
+          "relative_error": 0.0007180477355595361
+        }
+      ],
+      "theoretical_mean": 0.2310585786300049,
+      "theoretical_variance": 0.034446645388523045,
+      "wasserstein_distance": 0.0007211247163529125,
+      "wasserstein_over_mean": 0.0031209605833664054
+    },
+    {
+      "approximate_mean_relative_error": 0.00133081439160462,
+      "approximate_sample_mean": 0.23136607471174941,
+      "approximate_sample_variance": 0.034392678265976855,
+      "approximate_variance_relative_error": -0.0015666873199841765,
+      "eta": 1.0,
+      "exact_sample_mean": 0.23043671638387445,
+      "exact_sample_variance": 0.03418131209873445,
+      "ks_statistic": 0.0038650000000000073,
+      "num_terms": 16,
+      "quantiles": [
+        {
+          "approximate": 0.02028380217715791,
+          "exact": 0.020033704182724658,
+          "probability": 0.001,
+          "relative_error": 0.012483861803695555
+        },
+        {
+          "approximate": 0.031002162115463715,
+          "exact": 0.03090319963954328,
+          "probability": 0.01,
+          "relative_error": 0.003202337527335038
+        },
+        {
+          "approximate": 0.048169680691989,
+          "exact": 0.047962347894636395,
+          "probability": 0.05,
+          "relative_error": 0.004322824183004416
+        },
+        {
+          "approximate": 0.17639872080554098,
+          "exact": 0.17600605005818917,
+          "probability": 0.5,
+          "relative_error": 0.0022310071001649247
+        },
+        {
+          "approximate": 0.6003297379570317,
+          "exact": 0.5959355697220885,
+          "probability": 0.95,
+          "relative_error": 0.007373562610119758
+        },
+        {
+          "approximate": 0.894538089928417,
+          "exact": 0.892630021643316,
+          "probability": 0.99,
+          "relative_error": 0.0021375802279071
+        },
+        {
+          "approximate": 1.308854736269652,
+          "exact": 1.3194511720784308,
+          "probability": 0.999,
+          "relative_error": -0.008030941980283297
+        }
+      ],
+      "theoretical_mean": 0.2310585786300049,
+      "theoretical_variance": 0.034446645388523045,
+      "wasserstein_distance": 0.0010244734524067272,
+      "wasserstein_over_mean": 0.004433825649240321
+    },
+    {
+      "approximate_mean_relative_error": -0.0007098579814841308,
+      "approximate_sample_mean": 0.190263383066377,
+      "approximate_sample_variance": 0.02130288530349711,
+      "approximate_variance_relative_error": -0.002264650507101548,
+      "eta": 2.0,
+      "exact_sample_mean": 0.19032510032000988,
+      "exact_sample_variance": 0.021394544238034222,
+      "ks_statistic": 0.00188499999999997,
+      "num_terms": 8,
+      "quantiles": [
+        {
+          "approximate": 0.0194221231802545,
+          "exact": 0.019276102331185593,
+          "probability": 0.001,
+          "relative_error": 0.007575226908433024
+        },
+        {
+          "approximate": 0.029235101495602815,
+          "exact": 0.029203307502737117,
+          "probability": 0.01,
+          "relative_error": 0.001088712053000098
+        },
+        {
+          "approximate": 0.04422343527203734,
+          "exact": 0.04410766292950554,
+          "probability": 0.05,
+          "relative_error": 0.0026247671003751245
+        },
+        {
+          "approximate": 0.14786620621404684,
+          "exact": 0.1480143422816917,
+          "probability": 0.5,
+          "relative_error": -0.0010008223889745207
+        },
+        {
+          "approximate": 0.48117206584663313,
+          "exact": 0.4789303287913025,
+          "probability": 0.95,
+          "relative_error": 0.004680716422758652
+        },
+        {
+          "approximate": 0.7127930783635031,
+          "exact": 0.7153156013622873,
+          "probability": 0.99,
+          "relative_error": -0.0035264476183381973
+        },
+        {
+          "approximate": 1.0333062415604226,
+          "exact": 1.0541748522234864,
+          "probability": 0.999,
+          "relative_error": -0.019796156794147854
+        }
+      ],
+      "theoretical_mean": 0.1903985389889412,
+      "theoretical_variance": 0.02135123839635867,
+      "wasserstein_distance": 0.0002935570454072128,
+      "wasserstein_over_mean": 0.0015418030357063992
+    },
+    {
+      "approximate_mean_relative_error": -0.0006661681786868268,
+      "approximate_sample_mean": 0.19027170154099832,
+      "approximate_sample_variance": 0.02124454464191148,
+      "approximate_variance_relative_error": -0.0049970756949342205,
+      "eta": 2.0,
+      "exact_sample_mean": 0.19032510032000988,
+      "exact_sample_variance": 0.021394544238034222,
+      "ks_statistic": 0.0024399999999999977,
+      "num_terms": 16,
+      "quantiles": [
+        {
+          "approximate": 0.019850814207722788,
+          "exact": 0.019276102331185593,
+          "probability": 0.001,
+          "relative_error": 0.029814734673171216
+        },
+        {
+          "approximate": 0.029299567145101065,
+          "exact": 0.029203307502737117,
+          "probability": 0.01,
+          "relative_error": 0.0032961897331295785
+        },
+        {
+          "approximate": 0.044093069091397326,
+          "exact": 0.04410766292950554,
+          "probability": 0.05,
+          "relative_error": -0.00033086854163049664
+        },
+        {
+          "approximate": 0.1484560338386848,
+          "exact": 0.1480143422816917,
+          "probability": 0.5,
+          "relative_error": 0.002984113229733592
+        },
+        {
+          "approximate": 0.47908648043855906,
+          "exact": 0.4789303287913025,
+          "probability": 0.95,
+          "relative_error": 0.00032604251154998203
+        },
+        {
+          "approximate": 0.7128087605384555,
+          "exact": 0.7153156013622873,
+          "probability": 0.99,
+          "relative_error": -0.003504524183531887
+        },
+        {
+          "approximate": 1.0465224581509642,
+          "exact": 1.0541748522234864,
+          "probability": 0.999,
+          "relative_error": -0.007259131686153944
+        }
+      ],
+      "theoretical_mean": 0.1903985389889412,
+      "theoretical_variance": 0.02135123839635867,
+      "wasserstein_distance": 0.000371154385716707,
+      "wasserstein_over_mean": 0.0019493552192554613
+    },
+    {
+      "approximate_mean_relative_error": -0.0033405894125457026,
+      "approximate_sample_mean": 0.1201008949685517,
+      "approximate_sample_variance": 0.006401096850400141,
+      "approximate_variance_relative_error": -0.004115019830175436,
+      "eta": 4.0,
+      "exact_sample_mean": 0.12043152536432317,
+      "exact_sample_variance": 0.006447301963539686,
+      "ks_statistic": 0.0032150000000000234,
+      "num_terms": 8,
+      "quantiles": [
+        {
+          "approximate": 0.017465866789258502,
+          "exact": 0.017365249676284757,
+          "probability": 0.001,
+          "relative_error": 0.0057941644865121475
+        },
+        {
+          "approximate": 0.02504571737184214,
+          "exact": 0.02507529048673307,
+          "probability": 0.01,
+          "relative_error": -0.0011793727736306085
+        },
+        {
+          "approximate": 0.03597962929885805,
+          "exact": 0.036071834090846036,
+          "probability": 0.05,
+          "relative_error": -0.0025561437146714543
+        },
+        {
+          "approximate": 0.09865846975520819,
+          "exact": 0.09893742349768378,
+          "probability": 0.5,
+          "relative_error": -0.0028194967345407363
+        },
+        {
+          "approximate": 0.2770897491182973,
+          "exact": 0.2782384891467665,
+          "probability": 0.95,
+          "relative_error": -0.004128616540407052
+        },
+        {
+          "approximate": 0.4013072523649733,
+          "exact": 0.4026864557248348,
+          "probability": 0.99,
+          "relative_error": -0.0034250055850002744
+        },
+        {
+          "approximate": 0.5847057524361412,
+          "exact": 0.5736971847839216,
+          "probability": 0.999,
+          "relative_error": 0.019188812398244326
+        }
+      ],
+      "theoretical_mean": 0.12050344750947711,
+      "theoretical_variance": 0.006427546331011625,
+      "wasserstein_distance": 0.0003631882610007203,
+      "wasserstein_over_mean": 0.003013924236251888
+    },
+    {
+      "approximate_mean_relative_error": -0.002574834451439334,
+      "approximate_sample_mean": 0.1201931710813125,
+      "approximate_sample_variance": 0.006396591890668137,
+      "approximate_variance_relative_error": -0.0048159031066239005,
+      "eta": 4.0,
+      "exact_sample_mean": 0.12043152536432317,
+      "exact_sample_variance": 0.006447301963539686,
+      "ks_statistic": 0.0027499999999999747,
+      "num_terms": 16,
+      "quantiles": [
+        {
+          "approximate": 0.017384731347154573,
+          "exact": 0.017365249676284757,
+          "probability": 0.001,
+          "relative_error": 0.001121876807589003
+        },
+        {
+          "approximate": 0.024980838496802285,
+          "exact": 0.02507529048673307,
+          "probability": 0.01,
+          "relative_error": -0.003766735622893722
+        },
+        {
+          "approximate": 0.035932467749702005,
+          "exact": 0.036071834090846036,
+          "probability": 0.05,
+          "relative_error": -0.0038635779038304744
+        },
+        {
+          "approximate": 0.09881700542011697,
+          "exact": 0.09893742349768378,
+          "probability": 0.5,
+          "relative_error": -0.0012171135381307996
+        },
+        {
+          "approximate": 0.27745637322484945,
+          "exact": 0.2782384891467665,
+          "probability": 0.95,
+          "relative_error": -0.0028109551784710712
+        },
+        {
+          "approximate": 0.40148641229186943,
+          "exact": 0.4026864557248348,
+          "probability": 0.99,
+          "relative_error": -0.00298009385690734
+        },
+        {
+          "approximate": 0.5773819035366262,
+          "exact": 0.5736971847839216,
+          "probability": 0.999,
+          "relative_error": 0.006422758992781908
+        }
+      ],
+      "theoretical_mean": 0.12050344750947711,
+      "theoretical_variance": 0.006427546331011625,
+      "wasserstein_distance": 0.0002561674388861716,
+      "wasserstein_over_mean": 0.002125810042621603
+    },
+    {
+      "approximate_mean_relative_error": -0.0006353844471984914,
+      "approximate_sample_mean": 0.06241839634027395,
+      "approximate_sample_variance": 0.0009701687417369405,
+      "approximate_variance_relative_error": -0.0005158181746563077,
+      "eta": 8.0,
+      "exact_sample_mean": 0.06251609641585125,
+      "exact_sample_variance": 0.000977106096467488,
+      "ks_statistic": 0.002950000000000008,
+      "num_terms": 8,
+      "quantiles": [
+        {
+          "approximate": 0.014623320367491458,
+          "exact": 0.014147383466573299,
+          "probability": 0.001,
+          "relative_error": 0.033641337427707266
+        },
+        {
+          "approximate": 0.019447029335700347,
+          "exact": 0.01928795073664782,
+          "probability": 0.01,
+          "relative_error": 0.008247563529404454
+        },
+        {
+          "approximate": 0.02587230417079388,
+          "exact": 0.025756794957690735,
+          "probability": 0.05,
+          "relative_error": 0.0044846112760879835
+        },
+        {
+          "approximate": 0.05551420266884073,
+          "exact": 0.05564517216047889,
+          "probability": 0.5,
+          "relative_error": -0.00235365417255685
+        },
+        {
+          "approximate": 0.12220702316562515,
+          "exact": 0.12264065113318055,
+          "probability": 0.95,
+          "relative_error": -0.003535760480303617
+        },
+        {
+          "approximate": 0.1662445330118962,
+          "exact": 0.1664287801728286,
+          "probability": 0.99,
+          "relative_error": -0.001107063097747112
+        },
+        {
+          "approximate": 0.22989025902282542,
+          "exact": 0.22956629830430683,
+          "probability": 0.999,
+          "relative_error": 0.0014111858792493857
+        }
+      ],
+      "theoretical_mean": 0.0624580812336917,
+      "theoretical_variance": 0.0009706694306708638,
+      "wasserstein_distance": 0.00014344161029626522,
+      "wasserstein_over_mean": 0.0022966060990501367
+    },
+    {
+      "approximate_mean_relative_error": -0.00039018072699011585,
+      "approximate_sample_mean": 0.06243371129414953,
+      "approximate_sample_variance": 0.0009809286299412854,
+      "approximate_variance_relative_error": 0.010569199921471773,
+      "eta": 8.0,
+      "exact_sample_mean": 0.06251609641585125,
+      "exact_sample_variance": 0.000977106096467488,
+      "ks_statistic": 0.003514999999999935,
+      "num_terms": 16,
+      "quantiles": [
+        {
+          "approximate": 0.01427884541441119,
+          "exact": 0.014147383466573299,
+          "probability": 0.001,
+          "relative_error": 0.00929231529975153
+        },
+        {
+          "approximate": 0.01930124817591248,
+          "exact": 0.01928795073664782,
+          "probability": 0.01,
+          "relative_error": 0.000689416903133865
+        },
+        {
+          "approximate": 0.025783354430813026,
+          "exact": 0.025756794957690735,
+          "probability": 0.05,
+          "relative_error": 0.0010311637440107763
+        },
+        {
+          "approximate": 0.055579793482378556,
+          "exact": 0.05564517216047889,
+          "probability": 0.5,
+          "relative_error": -0.0011749209421399705
+        },
+        {
+          "approximate": 0.12247368272946317,
+          "exact": 0.12264065113318055,
+          "probability": 0.95,
+          "relative_error": -0.0013614442044674448
+        },
+        {
+          "approximate": 0.16816526029859447,
+          "exact": 0.1664287801728286,
+          "probability": 0.99,
+          "relative_error": 0.010433773076763526
+        },
+        {
+          "approximate": 0.23352019308301233,
+          "exact": 0.22956629830430683,
+          "probability": 0.999,
+          "relative_error": 0.017223324189617445
+        }
+      ],
+      "theoretical_mean": 0.0624580812336917,
+      "theoretical_variance": 0.0009706694306708638,
+      "wasserstein_distance": 0.0001755635542118972,
+      "wasserstein_over_mean": 0.002810902140189237
+    },
+    {
+      "approximate_mean_relative_error": -5.3127293422507396e-05,
+      "approximate_sample_mean": 0.0416639410420925,
+      "approximate_sample_variance": 0.0002882652709497389,
+      "approximate_variance_relative_error": -0.0035960504246134923,
+      "eta": 12.0,
+      "exact_sample_mean": 0.04162742672272229,
+      "exact_sample_variance": 0.00028658067121694236,
+      "ks_statistic": 0.002405000000000001,
+      "num_terms": 8,
+      "quantiles": [
+        {
+          "approximate": 0.012598111546055404,
+          "exact": 0.012085740714718725,
+          "probability": 0.001,
+          "relative_error": 0.04239465692927572
+        },
+        {
+          "approximate": 0.0160023053615819,
+          "exact": 0.015755108689441008,
+          "probability": 0.01,
+          "relative_error": 0.015689937595071184
+        },
+        {
+          "approximate": 0.02040401924032064,
+          "exact": 0.020282938463345227,
+          "probability": 0.05,
+          "relative_error": 0.005969587552327664
+        },
+        {
+          "approximate": 0.03848568678878428,
+          "exact": 0.03848497259402821,
+          "probability": 0.5,
+          "relative_error": 1.855775664972373e-05
+        },
+        {
+          "approximate": 0.07391783956502906,
+          "exact": 0.07380094960537568,
+          "probability": 0.95,
+          "relative_error": 0.0015838544121506164
+        },
+        {
+          "approximate": 0.09577491548897145,
+          "exact": 0.09528710443713406,
+          "probability": 0.99,
+          "relative_error": 0.00511938162796437
+        },
+        {
+          "approximate": 0.12572487510718283,
+          "exact": 0.12420678399769826,
+          "probability": 0.999,
+          "relative_error": 0.01222228819250892
+        }
+      ],
+      "theoretical_mean": 0.04166615465211649,
+      "theoretical_variance": 0.0002893056285782307,
+      "wasserstein_distance": 5.97947323532204e-05,
+      "wasserstein_over_mean": 0.001435091211379235
+    },
+    {
+      "approximate_mean_relative_error": -1.698908234687005e-05,
+      "approximate_sample_mean": 0.04166544678238403,
+      "approximate_sample_variance": 0.000289113341441305,
+      "approximate_variance_relative_error": -0.0006646505215632829,
+      "eta": 12.0,
+      "exact_sample_mean": 0.04162742672272229,
+      "exact_sample_variance": 0.00028658067121694236,
+      "ks_statistic": 0.0020100000000000673,
+      "num_terms": 16,
+      "quantiles": [
+        {
+          "approximate": 0.012009599256110382,
+          "exact": 0.012085740714718725,
+          "probability": 0.001,
+          "relative_error": -0.006300106911578269
+        },
+        {
+          "approximate": 0.015839997366131533,
+          "exact": 0.015755108689441008,
+          "probability": 0.01,
+          "relative_error": 0.005388009588751154
+        },
+        {
+          "approximate": 0.02026119066140863,
+          "exact": 0.020282938463345227,
+          "probability": 0.05,
+          "relative_error": -0.0010722214621859683
+        },
+        {
+          "approximate": 0.03849807505839299,
+          "exact": 0.03848497259402821,
+          "probability": 0.5,
+          "relative_error": 0.0003404566375296528
+        },
+        {
+          "approximate": 0.07376977471925443,
+          "exact": 0.07380094960537568,
+          "probability": 0.95,
+          "relative_error": -0.0004224184958046101
+        },
+        {
+          "approximate": 0.09566026534494478,
+          "exact": 0.09528710443713406,
+          "probability": 0.99,
+          "relative_error": 0.003916174282081442
+        },
+        {
+          "approximate": 0.1268733771028004,
+          "exact": 0.12420678399769826,
+          "probability": 0.999,
+          "relative_error": 0.02146898115606589
+        }
+      ],
+      "theoretical_mean": 0.04166615465211649,
+      "theoretical_variance": 0.0002893056285782307,
+      "wasserstein_distance": 5.336121772116692e-05,
+      "wasserstein_over_mean": 0.0012806849628120497
+    }
+  ],
+  "jax_version": "0.11.2",
+  "polyagamma_version": "2.0.2",
+  "reference": "polyagamma.random_polyagamma(method='devroye')",
+  "samples_per_configuration": 200000
+}

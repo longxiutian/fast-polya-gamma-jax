@@ -1,0 +1,31 @@
+{
+  "backend": "cpu",
+  "devices": [
+    "cpu:0"
+  ],
+  "dtype": "float64",
+  "jax_version": "0.11.2",
+  "kernels": {
+    "custom_k16_tail": {
+      "draws_per_second": 10543518.325210119,
+      "max_seconds": 0.006839900044724345,
+      "median_seconds": 0.005690700025297701,
+      "min_seconds": 0.005274600000120699
+    },
+    "custom_k8_tail": {
+      "draws_per_second": 14835511.468298934,
+      "max_seconds": 0.004430399974808097,
+      "median_seconds": 0.004044349945615977,
+      "min_seconds": 0.0036069999914616346
+    },
+    "numpyro_truncated_k8": {
+      "draws_per_second": 184071.12876861362,
+      "max_seconds": 0.414134000078775,
+      "median_seconds": 0.32596094999462366,
+      "min_seconds": 0.22216109989676625
+    }
+  },
+  "numpyro_version": "0.22.0",
+  "repeats": 30,
+  "size": 60000
+}
