@@ -1,0 +1,117 @@
+{
+  "environment": {
+    "backend": "cpu",
+    "device": "cpu:0",
+    "device_kind": "cpu",
+    "device_memory_stats_after_run": null,
+    "jax": "0.11.2",
+    "jaxlib": "0.11.2",
+    "numpy": "2.5.3",
+    "package_version": "0.1.0",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "process_rss_bytes_end": 416710656,
+    "process_rss_bytes_max_at_chunk_boundaries": 445132800,
+    "process_rss_bytes_start": 258244608,
+    "processor": "Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",
+    "psutil": "7.2.2",
+    "python": "3.12.14"
+  },
+  "model_geometry": {
+    "campaigns": 88,
+    "controls": 22,
+    "creative_coefficients_per_person": 3,
+    "items": 340,
+    "maximum_observations_per_person": 4,
+    "mean_observations_per_person": 1.98795,
+    "observations": 39759,
+    "people": 20000,
+    "person_block_dimension": 4,
+    "respondent_features": 73
+  },
+  "sampler": {
+    "algorithm": "systematic-scan conjugate block Gibbs",
+    "chunk_size": 10,
+    "dtype": "float64",
+    "person_state_storage": "final state only",
+    "pg_num_terms": 8,
+    "pg_sampler": "fixed-series exponential with exact tail-mean correction",
+    "retained_trace": "scalar and small global diagnostics only",
+    "sample_sweeps": 1000,
+    "warmup_sweeps": 100
+  },
+  "schema_version": "block-gibbs-benchmark-v1",
+  "scientific_status": {
+    "posterior_convergence_claimed": false,
+    "purpose": "computational scalability and numerical stability",
+    "structural_analog_not_paper_teacher": true,
+    "substantive_interpretation_supported": false,
+    "synthetic_data": true,
+    "train_test_split": false
+  },
+  "seed": 20260921,
+  "source_sha256": {
+    "benchmarks/benchmark_block_gibbs.py": "aef4ffa0c6458ba746956153d02f4ce2a90dfcaaf887ece4ae72c1534100a64b",
+    "src/fast_polya_gamma_jax/block_gibbs.py": "0acf34a69aad00aaf28db175787ca51a26d5adc1802a51dceff74426840c495d",
+    "src/fast_polya_gamma_jax/sampler.py": "08f385ba17f2a5601bbf1e4ece0da30617a8833679c94cced92e78b9b0a9625d"
+  },
+  "stability": {
+    "all_omega_positive": true,
+    "all_person_cholesky_diagonals_positive": true,
+    "all_scales_positive": true,
+    "all_states_finite": true,
+    "log_likelihood_per_observation": {
+      "max": -0.6023267502384714,
+      "mean": -0.6207381383885024,
+      "min": -0.6303729753920024
+    },
+    "max_abs_eta": {
+      "max": 5.088443065270886,
+      "mean": 3.942321217488722,
+      "min": 3.1973377395643277
+    },
+    "min_person_cholesky_diagonal": {
+      "max": 2.23085752931689,
+      "mean": 2.0032598028419635,
+      "min": 1.775212095260938
+    },
+    "omega_max": {
+      "max": 3.415771734831222,
+      "mean": 2.198799865216621,
+      "min": 1.7234421301564065
+    },
+    "omega_mean": {
+      "max": 0.23985031121762088,
+      "mean": 0.23630697393567937,
+      "min": 0.23178806394822837
+    },
+    "omega_min": {
+      "max": 0.01675418700436022,
+      "mean": 0.012914566162150913,
+      "min": 0.008816250810436453
+    },
+    "passed": true,
+    "scalar_trace_ess": {
+      "mu_a": 4.153808564608985,
+      "mu_b_0": 9.058930988260588,
+      "mu_b_1": 7.407024757683191,
+      "mu_b_2": 7.574284511041647,
+      "sigma_a": 5.5643540984821565,
+      "sigma_campaign": 194.9016214874702,
+      "sigma_item": 37.32704157273781
+    }
+  },
+  "timing": {
+    "chunk_sweeps_per_second": {
+      "max": 62.89521780111643,
+      "mean": 52.03008819852475,
+      "min": 39.36155556453776
+    },
+    "compile_and_first_warmup_chunk_seconds": 2.133776400005445,
+    "observation_pg_updates_per_second": 2046507.4017693682,
+    "person_block_updates_per_second": 1029456.1743350527,
+    "post_compile_warmup_seconds": 1.9349788000108674,
+    "sample_seconds": 19.42773330095224,
+    "sample_wall_seconds_including_rss_probes": 19.436627799994312,
+    "sweeps_per_second": 51.47280871675264
+  }
+}
