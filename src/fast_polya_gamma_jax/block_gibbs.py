@@ -283,6 +283,106 @@ def _all_state_finite(state: BlockGibbsState):
     return jnp.all(jnp.stack([jnp.all(jnp.isfinite(leaf)) for leaf in leaves]))
 
 
+def _standardize_person_effects(
+    person,
+    mu_a,
+    hierarchy_coef,
+    sigma_a2,
+    sigma_b,
+    hierarchy_design,
+):
+    """Map centered person effects to unit-scale residual coordinates."""
+    sigma_a = jnp.sqrt(sigma_a2)
+    sigma_b_cholesky = jnp.linalg.cholesky(sigma_b)
+    z_a = (person[:, 0] - mu_a) / sigma_a
+    hierarchy_residual = person[:, 1:] - hierarchy_design @ hierarchy_coef
+    z_b = jsp.linalg.solve_triangular(
+        sigma_b_cholesky,
+        hierarchy_residual.T,
+        lower=True,
+    ).T
+    return z_a, z_b, sigma_a, sigma_b_cholesky
+
+
+def _interweave_person_location(
+    key,
+    *,
+    person,
+    campaign,
+    item,
+    delta,
+    hierarchy_coef,
+    sigma_b,
+    mu_a,
+    sigma_a2,
+    omega,
+    kappa,
+    data: BlockGibbsData,
+    priors: BlockGibbsPriors,
+):
+    """Redraw the four global person locations in noncentered coordinates.
+
+    The centered sweep remains responsible for the conjugate scale updates.
+    This ancillary-sufficiency interweaving step holds the standardized person
+    residuals fixed and jointly updates ``mu_a`` and the intercept row of the
+    three-coefficient hierarchy.
+    """
+    dtype = person.dtype
+    z_a, z_b, sigma_a, sigma_b_cholesky = _standardize_person_effects(
+        person,
+        mu_a,
+        hierarchy_coef,
+        sigma_a2,
+        sigma_b,
+        data.hierarchy_design,
+    )
+
+    hierarchy_without_intercept = (
+        data.hierarchy_design[:, 1:] @ hierarchy_coef[1:]
+    )
+    person_without_location = jnp.concatenate(
+        [
+            (sigma_a * z_a)[:, None],
+            hierarchy_without_intercept + z_b @ sigma_b_cholesky.T,
+        ],
+        axis=1,
+    )
+    observation_offset = (
+        jnp.sum(
+            data.person_design * person_without_location[data.person_index],
+            axis=1,
+        )
+        + campaign[data.campaign_index]
+        + item[data.item_index]
+        + data.controls @ delta
+    )
+
+    sigma_b_inverse = jnp.linalg.solve(sigma_b, jnp.eye(3, dtype=dtype))
+    location_prior_precision = jnp.zeros((4, 4), dtype=dtype)
+    location_prior_precision = location_prior_precision.at[0, 0].set(
+        1.0 / priors.mu_a_variance
+    )
+    location_prior_precision = location_prior_precision.at[1:, 1:].set(
+        priors.hierarchy_row_precision * sigma_b_inverse
+    )
+    location_precision = location_prior_precision + data.person_design.T @ (
+        omega[:, None] * data.person_design
+    )
+    location_information = data.person_design.T @ (
+        kappa - omega * observation_offset
+    )
+    location, _ = _sample_precision_normal(
+        key,
+        location_precision,
+        location_information,
+    )
+
+    mu_a = location[0]
+    hierarchy_coef = hierarchy_coef.at[0].set(location[1:])
+    person = person_without_location + location[None, :]
+    return person, mu_a, hierarchy_coef
+
+
 def block_gibbs_sweep(
     state: BlockGibbsState,
     data: BlockGibbsData,
@@ -290,9 +390,10 @@ def block_gibbs_sweep(
     *,
     num_terms: int = 16,
     tail_correction: bool = True,
+    interweave_person_location: bool = False,
 ) -> tuple[BlockGibbsState, BlockGibbsMetrics]:
     """Run one systematic-scan block Gibbs transition."""
-    keys = jax.random.split(state.key, 12)
+    keys = jax.random.split(state.key, 13 if interweave_person_location else 12)
     next_key = keys[0]
     people = state.person.shape[0]
     campaigns = state.campaign.shape[0]
@@ -442,6 +543,23 @@ def block_gibbs_sweep(
         sigma_b_scale,
     )
 
+    if interweave_person_location:
+        person, mu_a, hierarchy_coef = _interweave_person_location(
+            keys[12],
+            person=person,
+            campaign=campaign,
+            item=item,
+            delta=delta,
+            hierarchy_coef=hierarchy_coef,
+            sigma_b=sigma_b,
+            mu_a=mu_a,
+            sigma_a2=sigma_a2,
+            omega=omega,
+            kappa=kappa,
+            data=data,
+            priors=priors,
+        )
+
     new_state = BlockGibbsState(
         key=next_key,
         person=person,
@@ -483,6 +601,7 @@ def run_block_gibbs(
     num_steps: int,
     num_terms: int = 16,
     tail_correction: bool = True,
+    interweave_person_location: bool = False,
 ) -> tuple[BlockGibbsState, BlockGibbsMetrics]:
     """Run ``num_steps`` transitions while retaining only scalar diagnostics."""
     if num_steps < 1:
@@ -495,6 +614,7 @@ def run_block_gibbs(
             priors,
             num_terms=num_terms,
             tail_correction=tail_correction,
+            interweave_person_location=interweave_person_location,
         )
 
     return jax.lax.scan(transition, state, xs=None, length=num_steps)
